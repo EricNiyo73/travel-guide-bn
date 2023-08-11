@@ -4,6 +4,8 @@ import morgan from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import user_route from "./routes/user_routes"
+
 
 dotenv.config();
 const { PORT } = process.env;
@@ -39,7 +41,7 @@ app.get("/", (req, res) => {
     message: "Welcome to my API",
   });
 });
-
+app.use("/api/v1/", user_route)
 app.use("*", (req, res) => {
   return res.status(404).json({
     status: "failed",
