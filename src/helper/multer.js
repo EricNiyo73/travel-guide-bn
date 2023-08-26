@@ -18,7 +18,7 @@ export const upload =multer({
             return cb(new Error('Invalid file type'), false);
         }
         cb(null, true);
-    }
+     }
 
 });
 
