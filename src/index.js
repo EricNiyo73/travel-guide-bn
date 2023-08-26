@@ -27,7 +27,7 @@ mongoose
     console.log("Succesfully connected to the database");
   })
   .catch((err) => {
-    console.log("something went wrong", err);
+    console.log("something went wrong", err); 
     process.exit();
   });
 app.listen(PORT, () => {
@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
   });
 });
 app.use("/api/v1/", user_route);
-app.use('/api/v1',galllery_route)
+app.use('/api/v1/',galllery_route)  /////midlle way missing
 app.use("*", (req, res) => {
   return res.status(404).json({
     status: "failed",
