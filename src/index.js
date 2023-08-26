@@ -5,7 +5,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import user_route from "./routes/user_routes"
-
+import galllery_route from './routes/gallery_route'
 
 dotenv.config();
 const { PORT } = process.env;
@@ -27,7 +27,7 @@ mongoose
     console.log("Succesfully connected to the database");
   })
   .catch((err) => {
-    console.log("something went wrong", err);
+    console.log("something went wrong", err); 
     process.exit();
   });
 app.listen(PORT, () => {
@@ -41,7 +41,8 @@ app.get("/", (req, res) => {
     message: "Welcome to my API",
   });
 });
-app.use("/api/v1/", user_route)
+app.use("/api/v1/", user_route);
+app.use('/api/v1/',galllery_route)  /////midlle way missing
 app.use("*", (req, res) => {
   return res.status(404).json({
     status: "failed",
