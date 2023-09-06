@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 const cardSchema = new mongoose.Schema( 
     { 
         image: { 
-            type: String, 
+            type: Array, 
             required: true, 
             
         }, 
@@ -19,6 +19,11 @@ const cardSchema = new mongoose.Schema(
         location: { 
             type: String, 
             required: true, 
+             
+        }, 
+        comments: { 
+            type: Array, 
+            
              
         }, 
 
