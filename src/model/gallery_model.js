@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const gallerySchema = new mongoose.Schema(
     {
         photo: {
-            type: String,
+            type: Array,
             require: true
         }
         // video: {
