@@ -44,8 +44,8 @@ app.get("/", (req, res) => {
   });
 });
 app.use("/api/v1/", user_route);
-app.use('/api/v1/',galllery_route)  /////midlle way missing
-app.use('api/v1',card_route)
+app.use('/api/v1/',galllery_route);  
+app.use('/api/v1/',card_route);
 app.use("*", (req, res) => {
   return res.status(404).json({
     status: "failed",
