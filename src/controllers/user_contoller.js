@@ -91,3 +91,10 @@ export const login =async (req, res) => {
 
      
   }
+
+  export const getall_user = async (req,res) =>{
+    const user = await user_model.find();
+    return res.status(200).json({
+        users: user
+    })
+}
